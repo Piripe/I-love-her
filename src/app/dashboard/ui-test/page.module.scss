@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    background:var(--background-secondary);
+    width: max-content;
+    padding: 2em 0 0 1em;
+    border-radius: 1em;
+    margin:1em;
+    flex-direction: column;
+}
+.kitContainer {
+    margin-top:1em;
+    display: flex;
+    flex-direction: column;
+    >* {
+        margin-bottom: 1em;
+    }
+}
+.kitRow {
+    display: flex;
+    >* {
+        margin-right: 1em;
+    }
+}
+
+
+.multilineTextbox {
+    min-width:32em;
+    min-height: 12em;
+    max-width:32em;
+    max-height: 24em;
+}

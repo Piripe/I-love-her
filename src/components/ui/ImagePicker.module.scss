@@ -1,0 +1,63 @@
+.container, .fileName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.pickedImage {
+    margin-left: 1em;
+    font-size: 12px;
+}
+.fileSelector {
+    display: flex;
+    flex-direction: column;
+}
+.fileActions {
+    display: flex;
+    justify-content: flex-end;
+    >button {
+        margin: 4px 0 4px 8px;
+    }
+}
+.fileExplorer {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 50vh;
+    overflow-y: scroll;
+    >button {
+        margin: 4px;
+        width: 64px;
+        min-height: 64px;
+        height: max-content;
+        padding: 4px;
+        font-size: 10px;
+        >img{
+            width: 100%;
+        }
+    }
+}
+.folderPath {
+    width: calc(100% - 4px);
+    margin: 4px;
+    display: flex;
+    align-items: center;
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 700px) {
+    .fileExplorer>button {
+        width: 128px;
+        min-height: 128px;
+        height: max-content;
+        font-size: 12px;
+    }
+    .fileSelector {
+        flex-direction: row;
+    }
+    .fileActions>button {
+        margin: 4px;
+    }
+}

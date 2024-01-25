@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    align-items: center;
+    > input {
+        margin-right: .75em;
+        width: 24px;
+        height: 24px;
+    }
+}

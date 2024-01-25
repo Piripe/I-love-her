@@ -1,0 +1,47 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blob-background);
+}
+.backgroundsvg {
+    min-width: max(100vw, 100vh);
+    min-height: max(100vw, 100vh);
+    max-width: max(100vw, 100vh);
+    max-height: max(100vw, 100vh);
+}
+
+@for $i from 1 through 18 {
+    $a: #{$i * 90};
+    $b: #{$i * 90+360};
+
+    .blob:nth-child(#{$i}) {
+        @if $i % 2 == 1 {
+            fill: var(--blob-color-1);
+        } @else {
+            fill: var(--blob-color-2);
+        }
+        animation: move#{$i} $i * 4+20s infinite linear, appear 15s linear 1;
+    }
+
+    @keyframes move#{$i} {
+        from {
+            transform: rotate(#{$a}deg) translate(20px, 0.1px) rotate(-#{$a}deg);
+        }
+        to {
+            transform: rotate(#{$b}deg) translate(20px, 0.1px) rotate(-#{$b}deg);
+        }
+    }
+}
+.blob {
+    display: block;
+}
+@keyframes appear {
+    0% {
+        fill: transparent;
+    }
+}

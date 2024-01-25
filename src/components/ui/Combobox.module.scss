@@ -1,0 +1,19 @@
+.combobox {
+    display: block;
+    height: 32px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 0 1.5em;
+    background-color: var(--button-background-primary);
+    
+    transition: background-color 150ms;
+    
+    &:hover {
+        background-color: var(--button-background-secondary);
+    }
+    &:disabled {
+        color: var(--text-disabled);
+        background-color: var(--button-background-disabled);
+    }
+}
