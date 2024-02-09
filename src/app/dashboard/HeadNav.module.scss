@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    height: 48px;
+
+    align-items: center;
+
+    padding: 0 48px 0 0;
+
+    >a {
+        text-decoration: none;
+        color:var(--text-color);
+        height:32px;
+        background-color: #fff1;
+        backdrop-filter: saturate(.75) brightness(1.25) ;
+        padding: 0 1em;
+        display: flex;
+        align-items: center;
+        
+        border-radius: 6px;
+
+        transition: 150ms;
+
+        &:hover{
+            background-color: #fff2;
+        }
+    }
+}

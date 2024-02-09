@@ -7,6 +7,7 @@ export type ShapeProps = {
 export enum Layout {
     SimpleText = 0,
     BlurredCard = 1,
+    SimplePaging = 2,
 }
 export enum Background {
     Image = 0,
@@ -20,7 +21,8 @@ export enum Shape {
 export enum SpecialParamType {
     Layout = 0,
     Background = 1,
-    Shape = 2
+    Shape = 2,
+    Layouts = 3
 }
 export type LayoutDefinition = {
     type:Layout
@@ -41,4 +43,23 @@ export enum FolderContentType {
 export type FolderContent = {
     type:FolderContentType,
     name:string
+}
+export enum EditorParamComponent {
+    Layout = 0,
+    Background = 1,
+    Shape = 2,
+    Image = 3,
+    ShortText = 4,
+    LongText = 5,
+    Decimal = 6,
+    Int = 7,
+    Bool = 8,
+    Color = 9,
+}
+export type EditorParamDefinition = {
+    name:string,
+    label:string,
+    tips?:string,
+    component:EditorParamComponent,
+    componentAdditionalSettings?:any,
 }

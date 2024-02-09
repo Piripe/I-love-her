@@ -1,0 +1,87 @@
+.content {
+    max-width: 80%;
+    max-height: 80%;
+    padding: 2em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 12px;
+    border-bottom: solid 1px #fff3;
+    border-top: solid 1px #fff1;
+    border-left: solid 1px #fff2;
+    border-right: solid 1px #fff2;
+    box-shadow: 3px 3px 64px #0008;
+    
+    user-select: none;
+
+    backdrop-filter: saturate(1) brightness(.5) blur(max(6vw,6vh));
+
+    overflow: auto;
+    overflow-x: hidden;
+    
+    animation: content-appear .5s linear 1;
+
+    h2 {
+        font-family: 'Great Vibes', cursive;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 1em;
+    }
+    >*{
+        margin: 0.5em 0;
+    }
+}
+.contentContainer {
+    top: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.entry {
+    display: flex;
+    flex-direction: column;
+    >*:nth-child(1) {
+        margin-top: 0.25em;
+        width:min(25em,50vw);
+    }
+}
+@keyframes content-appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+    }
+}
+.invalidPassword {
+
+    &::before {
+        content: "Invalid password";
+        color:var(--bordeaux-accent-text);
+        position: relative;
+        text-align: end;
+
+        line-height: 0px;
+        font-size: 12px;
+        top:1em;
+        
+    }
+
+    >input {
+        outline: solid var(--bordeaux-accent) 2px;
+
+        &:focus {
+            outline: solid var(--bordeaux-accent-secondary) 2px;
+        }
+    }
+}
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

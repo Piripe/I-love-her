@@ -1,0 +1,32 @@
+.params {
+    padding: 0 8px;
+    box-shadow: 3px 3px 64px #0008;
+    border-bottom: solid 1px #fff3;
+    border-top: solid 1px #fff1;
+    border-left: solid 1px #fff2;
+    border-right: solid 1px #fff2;
+    background-color: #ffffff06;
+    border-radius: 8px;
+    margin: .5em;
+    max-width: 100%;
+}
+.paramRow {
+    display: flex;
+    align-items: center;
+    margin: .25em 0;
+    >* {
+        margin:0 0.25em;
+    }
+}
+.largeParamRow {
+    margin: .5em 0;
+    >textarea {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 5em;
+        max-height: 25em;
+    }
+}
+.label {
+    user-select: none;
+}

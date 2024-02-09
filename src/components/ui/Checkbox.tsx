@@ -5,7 +5,7 @@ export default function Checkbox(props: {
     className?: string;
     disabled?: boolean;
     label?: string;
-    defaultValue?: string;
+    defaultValue?: boolean;
     onChange?: ChangeEventHandler<HTMLInputElement>;
 }) {
     return (
@@ -14,9 +14,10 @@ export default function Checkbox(props: {
                 type="checkbox"
                 disabled={props.disabled}
                 className={props.className}
-                defaultValue={props.defaultValue}
-                onChange={props.onChange} />
-            {props.label}
+                defaultChecked={props.defaultValue}
+                onChange={props.onChange}
+            />
+            <div className={styles.label}>{props.label}</div>
         </div>
     );
 }

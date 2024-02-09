@@ -1,3 +1,5 @@
+import { ShapeProps } from "$/index.d";
+
 export default function Heart(props: ShapeProps) {
     const { x, y, size } = props;
     return (

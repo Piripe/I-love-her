@@ -1,0 +1,41 @@
+.content {
+    background: #fff1;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 0 0 0;
+    padding: 12px;
+    box-shadow: 3px 3px 64px #0008;
+    border-bottom: solid 1px #fff3;
+    border-top: solid 1px #fff1;
+    border-left: solid 1px #fff2;
+    border-right: solid 1px #fff2;
+    backdrop-filter: saturate(.75) brightness(1.25);
+    overflow: scroll;
+}
+.sideNavContainer {
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: saturate(1.5) brightness(.5) blur(max(6vw,6vh));
+
+    display: flex;
+}
+.headNavContainer {
+    display: flex;
+    
+    width: 100%;
+
+    flex-direction: column;
+}
+.navButton {
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: start;
+}
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}

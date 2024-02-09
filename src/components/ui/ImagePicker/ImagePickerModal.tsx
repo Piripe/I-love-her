@@ -62,14 +62,24 @@ export default function ImagePickerModal(props: {
                                         setWorkingPath([...workingPath, x.name]);
                                         setFolderContent(undefined);
                                     }
-                                }}>
+                                }}
+                                key={x.name}>
                                 <>
                                     {x.type == FolderContentType.File ? (
                                         <img
                                             src={
-                                                "/" +
-                                                path.join(...props.rootPath, ...workingPath, x.name)
+                                                "/_next/image?url=" +
+                                                encodeURI(
+                                                    "/" +
+                                                        path.join(
+                                                            ...props.rootPath,
+                                                            ...workingPath,
+                                                            x.name
+                                                        )
+                                                ) +
+                                                "&w=128&q=50"
                                             }
+                                            alt={x.name}
                                         />
                                     ) : (
                                         <></>

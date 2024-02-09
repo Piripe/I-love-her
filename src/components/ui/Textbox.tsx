@@ -10,8 +10,10 @@ export default function Textbox(props: {
     placeholder?: string;
     readOnly?: boolean;
     spellcheck?: boolean;
+    password?: boolean;
     pattern?:string;
     value?:string;
+    id?:string;
 }) {
     return props.multiline ?? false ? (
         <textarea
@@ -23,10 +25,11 @@ export default function Textbox(props: {
             readOnly={props.readOnly}
             spellCheck={props.spellcheck}
             value={props.value}
+            id={props.id}
         />
     ) : (
         <input
-            type="text"
+            type={props.password?"password":"text"}
             className={`${styles.textbox} ${props.className ?? ""}`}
             defaultValue={props.defaultValue}
             disabled={props.disabled}
@@ -36,6 +39,7 @@ export default function Textbox(props: {
             spellCheck={props.spellcheck}
             pattern={props.pattern}
             value={props.value}
+            id={props.id}
         />
     );
 }

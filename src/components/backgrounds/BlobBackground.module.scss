@@ -1,18 +1,18 @@
 .background {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--blob-background);
+    aspect-ratio: 1;
 }
 .backgroundsvg {
-    min-width: max(100vw, 100vh);
-    min-height: max(100vw, 100vh);
-    max-width: max(100vw, 100vh);
-    max-height: max(100vw, 100vh);
+    min-width: 100%;
+    min-height:100%;
+    
 }
 
 @for $i from 1 through 18 {

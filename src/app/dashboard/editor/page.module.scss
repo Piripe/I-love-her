@@ -1,0 +1,74 @@
+.previewViewport {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transform-origin: 0 0;
+    scale: 0.3;
+    background-color: black;
+
+}
+.previewViewportConainer {
+    width: 30vw;
+    height: 30vh;
+    overflow: hidden;
+    border-radius: 6px;
+}
+.editorContainer {
+    display: grid;
+    grid-template-columns: auto 8px calc(30vw + 22px);
+    justify-content: space-between;
+    max-height: 100%;
+    height: 100%;
+}
+.editorParams {
+    max-height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.resultJson {
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 15em;
+    max-height: 15em;
+    margin: 0.5em 0;
+}
+.card {
+    padding: 8px 8px;
+    box-shadow: 3px 3px 64px #0008;
+    border-bottom: solid 1px #fff3;
+    border-top: solid 1px #fff1;
+    border-left: solid 1px #fff2;
+    border-right: solid 1px #fff2;
+    background-color: #ffffff06;
+    border-radius: 8px;
+    margin: .5em;
+}
+.editorControlBox {
+    min-width: 30vw;
+    grid-column: 3;
+    padding: 2px 2px;
+}
+.fullscreenBox {
+    width: 24px;
+    height: 24px;
+    z-index: 1000;
+    position: absolute;
+    top: 30vh;
+    right: 22px;
+
+    &:checked {
+        top: auto;
+        width: 32px;
+        height: 32px;
+        bottom: 8px;
+        right: 8px;
+        ~.previewViewport {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            scale: 1;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.container {
+    padding: 4px;
+}
+.menu {
+    width: 40px;
+    transition: width cubic-bezier(0.33, 1, 0.68, 1) 300ms;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.menuContent {
+    width: min(300px, 75vw);
+
+    display: flex;
+    flex-direction: column;
+}
+.openAnim > span {
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: var(--text-primary);
+    top: 13px;
+    left: 8px;
+    z-index: -1;
+
+    transition: transform cubic-bezier(0.65, 0, 0.35, 1) 250ms, height cubic-bezier(0.65, 0, 0.35, 1) 300ms;
+
+    &:nth-child(1) {
+        top: 22px;
+    }
+    &:nth-child(2) {
+        top: 31px;
+    }
+}
+.openBox {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+    &:checked {
+        ~ .menu {
+            width: min(300px, 75vw);
+        }
+        ~ .openAnim > span {
+            transform: translateY(9px) rotate(45deg);
+            height: 4px;
+            &:nth-child(1) {
+                transform: scale(0);
+            }
+            &:nth-child(2) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+    }
+}

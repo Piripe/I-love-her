@@ -5,7 +5,7 @@ import styles from "./CalendarOverlay.module.scss";
 import Calendar from "react-calendar";
 import { redirect, useRouter } from "next/navigation";
 
-export default function CalendarOverlay(props:{selectedDate:number|Date}) {
+export default function CalendarOverlay(props:{selectedDate?:number|Date}) {
     const [opened, setOpened] = useState(false);
     const router = useRouter();
 
@@ -29,11 +29,13 @@ export default function CalendarOverlay(props:{selectedDate:number|Date}) {
                 <path d="M0,1L5,6 0,11 1,12 6,7 11,12 12,11 7,6 12,1 11,0 6,5 1,0"/>
             </svg>
             <div className={styles.calendarContainer}>
-                <Calendar defaultValue={new Date(props.selectedDate ?? 0)} minDate={new Date(2024,0,12,0,0,0)} maxDate={new Date(Date.now())} locale="fr-FR" onChange={(e)=>{
+                <Calendar defaultValue={props.selectedDate ? new Date(props.selectedDate) : undefined} minDate={new Date(2024,1,14,0,0,0)} maxDate={new Date(Date.now())} locale="fr-FR" onChange={(e)=>{
                     setOpened(false);
                     const date = e?.valueOf() as number;
-                    if (((Date.now()+1000*60*60)-date) / (1000*60*60*24) < 1) router.push(`/`,{scroll:false});
-                    else router.push(`/view/${Math.floor((date?.valueOf()+1000*60*60*12)/ (1000 * 60 * 60 * 24))}`,{scroll:false});
+                    const currentDate = Math.floor((Date.now()+1000*60*60*1) / (1000 * 60 * 60 * 24));
+                    const newDate = Math.floor((date?.valueOf()+1000*60*60*12)/ (1000 * 60 * 60 * 24));
+                    if (currentDate===newDate) router.push(`/`,{scroll:false});
+                    else router.push(`/view/${newDate}`,{scroll:false});
                 }} />
             </div>
         </div>

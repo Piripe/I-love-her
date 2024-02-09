@@ -5,17 +5,19 @@ import Button from "./Button";
 import styles from "./ImagePicker.module.scss";
 import Modal from "./Modal";
 import ImagePickerModal from "./ImagePicker/ImagePickerModal";
+import path from "path";
 
 export default function ImagePicker(props: {
-    className?: string | undefined;
-    defaultPath?: string[] | undefined;
-    rootPath?: string[] | undefined;
+    className?: string;
+    defaultWorkingPath?: string[];
+    rootPath?: string[];
+    defaultPath?:string;
     onSelect?: (path: string) => void;
 }) {
-    const [imagePath, setImagePath] = useState<string | undefined>();
-    const [showModal, setShowModal] = useState(false);
-    const [workingPath, setWorkingPath] = useState(props.defaultPath ?? []);
     const rootPath = props.rootPath ?? ["assets"];
+    const [imagePath, setImagePath] = useState( props.defaultPath?.startsWith("/"+path.join(...rootPath)) ? props.defaultPath.substring(rootPath.map(x=>x.length).reduce((x,y)=>x+y+1)+2) : props.defaultPath);
+    const [showModal, setShowModal] = useState(false);
+    const [workingPath, setWorkingPath] = useState(props.defaultWorkingPath ?? []);
 
     return (
         <div className={`${styles.container} ${props.className}`}>
