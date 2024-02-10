@@ -18,8 +18,8 @@ export default function Page() {
         id
             ? null
             : ({
-                  type: 0,
-                  options: JSON.parse(JSON.stringify(layoutEditorParams[0].defaults)),
+                  type: 2,
+                  options: JSON.parse(JSON.stringify(layoutEditorParams[2].defaults)),
               } as LayoutDefinition)
     );
     const [priority, setPriority] = useState(id ? null : 0);
@@ -51,6 +51,7 @@ export default function Page() {
                 <LayoutEditor
                     defaultValue={value}
                     onValueChanged={e => {
+                        console.log(JSON.stringify(e))
                         setValue({ ...e });
                     }}
                 />

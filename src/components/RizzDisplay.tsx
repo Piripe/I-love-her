@@ -43,6 +43,6 @@ function getSpecialParam(param: SpecialParamType, value: any) {
         case SpecialParamType.Shape:
             return shapes[value];
         case SpecialParamType.Layouts:
-            return value.map(getLayout);
+            return value?.map(getLayout);
     }
 }

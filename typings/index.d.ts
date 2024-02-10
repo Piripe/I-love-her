@@ -55,6 +55,7 @@ export enum EditorParamComponent {
     Int = 7,
     Bool = 8,
     Color = 9,
+    Layouts = 10,
 }
 export type EditorParamDefinition = {
     name:string,

@@ -5,6 +5,7 @@ import DecimalEditor from "./DecimalEditor";
 import ImageEditor from "./ImageEditor";
 import IntEditor from "./IntEditor";
 import LayoutEditor from "./LayoutEditor";
+import LayoutsEditor from "./LayoutsEditor";
 import LongTextEditor from "./LongTextEditor";
 import ShapeEditor from "./ShapeEditor";
 import ShortTextEditor from "./ShortTextEditor";
@@ -40,10 +41,12 @@ export default function Param({
             return <div key={key}>{IntEditor({ defaultValue, onValueChanged, param })}</div>;
         case EditorParamComponent.Bool:
             return <div key={key}>{BoolEditor({ defaultValue, onValueChanged, param })}</div>;
+        case EditorParamComponent.Layouts:
+            return <div key={key}>{LayoutsEditor({ defaultValue, onValueChanged, param })}</div>;
 
         default:
             return (
-                <div key={key}>
+                <div key={key} >
                     {param.label} : {param.component} = {JSON.stringify(defaultValue)}
                 </div>
             );

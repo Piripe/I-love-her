@@ -29,7 +29,8 @@ export async function register() {
 // TODO: Timer
 // [ ] ?Beautiful animation to impress her
 // TODO: Paging Layout
-// [ ] Layout implementation ⚠️❗
-//   [ ] -  Layout ⚠️❗
-//   [ ] -  RizzDisplay ⚠️❗
-// [ ] Editor Implementation ⚠️❗
+// [x] Layout implementation ⚠️❗
+//   [x] -  Layout ⚠️❗
+//   [x] -  RizzDisplay ⚠️❗
+// [ ] [HALF FINISHED] Editor Implementation ⚠️❗
+//   [ ] -  Needed to fix state for editor (Maybe use class property instead) 

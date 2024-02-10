@@ -15,6 +15,7 @@ export default function LayoutEditor(props: {
     const [value, setValue] = useState(props.defaultValue);
     const updateValue = (v:LayoutDefinition)=>{
         const layoutKeys = Object.keys(layoutEditorParams[v.type].defaults);
+        console.log(v);
         setValue(v);
         props.onValueChanged({type:v.type ,options: Object.fromEntries(Object.entries(v.options).filter(([key])=>layoutKeys.includes(key)))});
     }
@@ -40,6 +41,7 @@ export default function LayoutEditor(props: {
             </div>
             <div className={styles.params}>
                 {layoutEditorParams[value.type].params.map(x =>
+                    
                     Param({
                         defaultValue: value.options[x.name],
                         param: x,

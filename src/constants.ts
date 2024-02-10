@@ -1,4 +1,4 @@
-import { EditorParamComponent, EditorParamDefinition, SpecialParamType } from "$/index.d";
+import { EditorParamComponent, EditorParamDefinition, LayoutDefinition, SpecialParamType } from "$/index.d";
 import BlobBackground from "./components/backgrounds/BlobBackground";
 import ImageBackground from "./components/backgrounds/ImageBackground";
 import BlurredCard from "./components/layouts/BlurredCard";
@@ -24,7 +24,7 @@ export const layoutSpecialParams = [
         background: SpecialParamType.Background,
     },
     {
-        children: SpecialParamType.Layouts,
+        pages: SpecialParamType.Layouts,
     }
 ];
 export const shapes = [Circle, Heart, Star];
@@ -102,6 +102,13 @@ export const backgroundEditorParams: {
     },
 ];
 
+const defaultLayoutOptions = {
+    children: "",
+    centered: true,
+    color: "#fff",
+    invertedTransparency: false,
+    background: { type: 0, options: backgroundEditorParams[0].defaults },
+}
 export const layoutEditorParams: {
     name: string;
     defaults: any;
@@ -109,13 +116,7 @@ export const layoutEditorParams: {
 }[] = [
     {
         name: "Simple Text",
-        defaults: {
-            children: "",
-            centered: true,
-            color: "#fff",
-            invertedTransparency: false,
-            background: { type: 0, options: backgroundEditorParams[0].defaults },
-        },
+        defaults: defaultLayoutOptions,
         params: [
             {
                 name: "children",
@@ -183,6 +184,25 @@ export const layoutEditorParams: {
                     max: 2,
                     step: 0.05,
                 },
+            },
+            {
+                name: "background",
+                label: "Background",
+                component: EditorParamComponent.Background,
+            },
+        ],
+    },
+    {
+        name: "Simple Paging",
+        defaults: {
+            pages: [{type:0,options:defaultLayoutOptions}] as LayoutDefinition[],
+            background: { type: 0, options: backgroundEditorParams[0].defaults },
+        },
+        params: [
+            {
+                name: "pages",
+                label: "Pages",
+                component: EditorParamComponent.Layouts,
             },
             {
                 name: "background",

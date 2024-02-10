@@ -4,6 +4,6 @@ export default function SimplePaging(props: { children: JSX.Element[] }) {
 
 
     return (
-        <SimplePagingClient>{props.children}</SimplePagingClient>
+        <SimplePagingClient pages={props.children}/>
     );
 }
