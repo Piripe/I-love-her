@@ -37,7 +37,7 @@ export default function ValentineModal() {
                         <div
                             className={styles.btn}
                             style={{ translate: transform }}
-                            onMouseEnter={() => {
+                            onMouseOver={() => {
                                 setTransform(
                                     `${Math.random() * 80 - 40}vw ${Math.random() * 80 - 40}vh`
                                 );
