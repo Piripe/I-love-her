@@ -18,8 +18,8 @@ export default function SimplePagingClient(props: { pages?: JSX.Element[] }) {
                             Math.min(1, Math.max(-1, i - scroll)) * 100
                         }%)`,
                         zIndex: +(i === scroll),
-                        opacity:+(i===scroll || i===(scroll+1) || i===(scroll-1) || i===lastScroll),
-                        transition:(i===scroll || i===(scroll+1) || i===(scroll-1) || i===lastScroll)?undefined:"none"
+                        opacity:+(i===scroll || i===lastScroll),
+                        transition:(i===scroll || i===lastScroll)?undefined:"none"
                     }}>
                     {x}
                 </div>
