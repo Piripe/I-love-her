@@ -1,0 +1,13 @@
+.entryRow {
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    >* {
+        margin: 0 .25em;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

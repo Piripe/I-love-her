@@ -11,7 +11,7 @@ export default function Button(props: {
 }) {
     return (
         <button
-            className={`${styles.button} ${[styles.default, styles.accent][props.style ?? 0]} ${
+            className={`${styles.button} ${[styles.default, styles.accent, styles.danger][props.style ?? 0]} ${
                 props.className ?? ""
             }`}
             disabled={props.disabled}

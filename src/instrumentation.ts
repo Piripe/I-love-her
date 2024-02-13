@@ -14,7 +14,10 @@ export async function register() {
 //   [x] -  Get and display parameters for each Layout/Background
 //   [x] -  Send layout to DB
 //   [x] -  Preview page
-//   [ ] -  Priority Editor ⚠️
+//   [ ] -  Priority Editor
+//     [x] -    Basic Working interface
+//     [ ] -    Edit values from the list
+//     [ ] -    Lazy loading
 //   [ ] -  Advanced Calendar management
 //   [x] -  Enhance UI 
 //   [ ] -  Color Picker
@@ -27,10 +30,10 @@ export async function register() {
 //   [ ] -  Whitelist device footprint
 // [ ] Pretty view for sent comments in old rizz view
 // TODO: Timer
-// [ ] ?Beautiful animation to impress her
-// TODO: Paging Layout
-// [x] Layout implementation ⚠️❗
-//   [x] -  Layout ⚠️❗
-//   [x] -  RizzDisplay ⚠️❗
-// [ ] [HALF FINISHED] Editor Implementation ⚠️❗
-//   [ ] -  Needed to fix state for editor (Maybe use class property instead) 
+// [x] ?Beautiful animation to impress her // too late
+// TODO: Move Image picker requests to api ⚠️
+// BUG: Image appearing at the wrong moment in SimplePaging layout ⚠️
+// BUG: Can't scroll in SimplePaging layout ⚠️
+// TODO: Improve Markdown
+// [ ] - Change text align
+// [ ] - Change text size

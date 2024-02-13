@@ -14,6 +14,7 @@ export default function Textbox(props: {
     pattern?:string;
     value?:string;
     id?:string;
+    maxLength?:number;
 }) {
     return props.multiline ?? false ? (
         <textarea
@@ -26,6 +27,7 @@ export default function Textbox(props: {
             spellCheck={props.spellcheck}
             value={props.value}
             id={props.id}
+            maxLength={props.maxLength}
         />
     ) : (
         <input
@@ -40,6 +42,7 @@ export default function Textbox(props: {
             pattern={props.pattern}
             value={props.value}
             id={props.id}
+            maxLength={props.maxLength}
         />
     );
 }

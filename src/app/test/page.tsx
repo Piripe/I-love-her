@@ -10,21 +10,7 @@ export default async function Page() {
     return (
         <>
             <div className={styles.display}>
-                {RizzDisplay({
-                    type: Layout.SimplePaging,
-                    options: {
-                        children: [
-                            // await getLayoutAtDate(0),
-                            // await getLayoutAtDate(19739),
-                            // await getLayoutAtDate(19740),
-                            // await getLayoutAtDate(19752),
-                            // await getLayoutAtDate(19753),
-                            // await getLayoutAtDate(19754),
-                            // await getLayoutAtDate(19760),
-                            // await getLayoutAtDate(19762),
-                        ],
-                    },
-                })}
+                {RizzDisplay(JSON.parse(`{"type":2,"options":{"pages":[{"type":0,"options":{"children":"j ","centered":true,"color":"#fff","invertedTransparency":false,"background":{"type":0,"options":{"image":"","blurSize":2}}}}],"background":{"type":0,"options":{"image":"","blurSize":2}}}}`))}
             </div>
             <div className={styles.overlay}>
                 <CalendarOverlay />

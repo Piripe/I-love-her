@@ -1,0 +1,30 @@
+.actionButtons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.deleteModal {
+    min-width: 25%;
+}
+.deleteModalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.deleteDescription {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+    user-select: none;
+    >span {
+        font-size: 75%;
+    }
+}
+.deleteActions {
+    display: flex;
+    justify-content: center;
+    >button {
+        margin:0 2em
+    }
+}

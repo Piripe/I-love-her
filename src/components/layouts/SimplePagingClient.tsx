@@ -1,9 +1,6 @@
 "use client";
 
 import styles from "./SimplePaging.module.scss";
-import Markdown from "react-markdown";
-import remarkBreaks from "remark-breaks";
-import MarkdownTwemoji from "../MarkdownTwemoji";
 import Button from "../ui/Button";
 import { useState } from "react";
 
@@ -17,12 +14,12 @@ export default function SimplePagingClient(props: { pages?: JSX.Element[] }) {
                 <div
                     key={i}
                     style={{
-                        transform: `scaleX(${i === scroll ? 1 : 2}) translateX(${
+                        transform: `scaleX(${i === scroll ? 1 : 1.5}) translateX(${
                             Math.min(1, Math.max(-1, i - scroll)) * 100
                         }%)`,
                         zIndex: +(i === scroll),
-                        opacity:+(i===scroll || i===lastScroll),
-                        transition:(i===scroll || i===lastScroll)?undefined:"none"
+                        opacity:+(i===scroll || i===(scroll+1) || i===(scroll-1) || i===lastScroll),
+                        transition:(i===scroll || i===(scroll+1) || i===(scroll-1) || i===lastScroll)?undefined:"none"
                     }}>
                     {x}
                 </div>
@@ -40,7 +37,7 @@ export default function SimplePagingClient(props: { pages?: JSX.Element[] }) {
                     className={styles.rightNavButton}
                     onClick={() => {
                         setLastScroll(scroll);
-                        setScroll(Math.min(props.pages?.length??0 - 1, scroll + 1));
+                        setScroll(Math.min((props.pages?.length??0) - 1, scroll + 1));
                     }}>
                     <Button disabled={scroll >= (props.pages?.length??0) - 1}>→</Button>
                 </div>

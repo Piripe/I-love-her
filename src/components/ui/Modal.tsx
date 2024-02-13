@@ -5,8 +5,9 @@ import ReactDOM from "react-dom";
 export default function Modal(props: {
     onClose?: () => void;
     onClickOver?: () => void;
-    children?: JSX.Element | undefined;
-    title?: string | undefined;
+    children?: JSX.Element;
+    title?: string;
+    className?: string;
 }) {
     const handleCloseClick: MouseEventHandler<HTMLAnchorElement> = e => {
         e.preventDefault();
@@ -21,7 +22,7 @@ export default function Modal(props: {
 
     const modalContent = (
         <div className={styles.modalOverlay} onClick={handleOverlayClick}>
-            <div className={styles.modal}>
+            <div className={`${styles.modal} ${props.className ?? ""}`}>
                 <div className={styles.modalHeader}>
                     {props.title}
                     <a href="#" onClick={handleCloseClick}>

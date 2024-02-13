@@ -25,8 +25,9 @@ export enum SpecialParamType {
     Layouts = 3
 }
 export type LayoutDefinition = {
-    type:Layout
-    options:any
+    type:Layout;
+    options:any;
+    uuid?:string;
 }
 export type BackgroundDefinition = {
     type:Background
@@ -34,7 +35,8 @@ export type BackgroundDefinition = {
 }
 export enum ButtonStyle {
     Default = 0,
-    Accent = 1
+    Accent = 1,
+    Danger = 2,
 }
 export enum FolderContentType {
     File = 0,
@@ -45,22 +47,22 @@ export type FolderContent = {
     name:string
 }
 export enum EditorParamComponent {
-    Layout = 0,
-    Background = 1,
-    Shape = 2,
-    Image = 3,
-    ShortText = 4,
-    LongText = 5,
-    Decimal = 6,
-    Int = 7,
-    Bool = 8,
-    Color = 9,
-    Layouts = 10,
+    Layout,
+    Background,
+    Shape,
+    Image,
+    ShortText,
+    LongText,
+    Decimal,
+    Int,
+    Bool,
+    Color,
+    Layouts,
 }
-export type EditorParamDefinition = {
+export type EditorParamDefinition<T = any> = {
     name:string,
     label:string,
     tips?:string,
     component:EditorParamComponent,
-    componentAdditionalSettings?:any,
+    componentAdditionalSettings?:T,
 }

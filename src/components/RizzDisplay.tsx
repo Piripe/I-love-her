@@ -1,4 +1,4 @@
-import { BackgroundDefinition, LayoutDefinition, SpecialParamType } from "$/index.d";
+import { BackgroundDefinition, Layout, LayoutDefinition, SpecialParamType } from "$/index.d";
 import {
     backgroundSpecialParams,
     backgrounds,

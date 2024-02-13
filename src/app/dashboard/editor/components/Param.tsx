@@ -23,9 +23,9 @@ export default function Param({
 }) {
     switch (param.component) {
         case EditorParamComponent.Layout:
-            return <div key={key}>{LayoutEditor({ defaultValue, onValueChanged, param })}</div>;
+            return <div key={key}><LayoutEditor defaultValue={defaultValue} onValueChanged={onValueChanged} param={param}/></div>;
         case EditorParamComponent.Background:
-            return <div key={key}>{BackgroundEditor({ defaultValue, onValueChanged, param })}</div>;
+            return <div key={key}><BackgroundEditor defaultValue={defaultValue} onValueChanged={onValueChanged} param={param}/></div>;
         case EditorParamComponent.Shape:
             return <div key={key}>{ShapeEditor({ defaultValue, onValueChanged, param })}</div>;
         case EditorParamComponent.Image:
@@ -42,7 +42,7 @@ export default function Param({
         case EditorParamComponent.Bool:
             return <div key={key}>{BoolEditor({ defaultValue, onValueChanged, param })}</div>;
         case EditorParamComponent.Layouts:
-            return <div key={key}>{LayoutsEditor({ defaultValue, onValueChanged, param })}</div>;
+            return <div key={key}><LayoutsEditor defaultValue={defaultValue} onValueChanged={onValueChanged} param={param}/></div>;
 
         default:
             return (

@@ -1,21 +1,22 @@
 .params {
-    padding: 0 8px;
+    padding: 0 4px;
     box-shadow: 3px 3px 64px #0008;
     border-bottom: solid 1px #fff3;
     border-top: solid 1px #fff1;
     border-left: solid 1px #fff2;
     border-right: solid 1px #fff2;
-    background-color: #ffffff06;
+    background-color: #5e5e5e0f;
     border-radius: 8px;
-    margin: .5em;
+    margin: .25em .005em;
     max-width: 100%;
+    font-size: 12px;
 }
 .paramRow {
     display: flex;
     align-items: center;
     margin: .25em 0;
     >* {
-        margin:0 0.25em;
+        margin:0 0.25em 0 .025em;
     }
 }
 .largeParamRow {
@@ -25,8 +26,20 @@
         max-width: 100%;
         min-height: 5em;
         max-height: 25em;
+        width: 100vw;
     }
 }
 .label {
     user-select: none;
+}
+
+@media (min-width: 700px) {
+    .params {
+        padding: 0 8px;
+        margin: .25em .05em;
+        font-size: 14px;
+    }
+    .paramRow>* {
+        margin:0 0.25em 0 .025em;
+    }
 }

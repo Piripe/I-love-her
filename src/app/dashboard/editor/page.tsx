@@ -18,11 +18,12 @@ export default function Page() {
         id
             ? null
             : ({
-                  type: 2,
-                  options: JSON.parse(JSON.stringify(layoutEditorParams[2].defaults)),
+                  type: 0,
+                  options: JSON.parse(JSON.stringify(layoutEditorParams[0].defaults)),
               } as LayoutDefinition)
     );
     const [priority, setPriority] = useState(id ? null : 0);
+    const [title, setTitle] = useState("");
 
     useEffect(() => {
         const token =
@@ -39,6 +40,7 @@ export default function Page() {
                     const fallback = await x.json();
                     setValue(fallback.layout);
                     setPriority(fallback.priority);
+                    setTitle(fallback.title);
                 }
             });
     },[id]);
@@ -51,7 +53,6 @@ export default function Page() {
                 <LayoutEditor
                     defaultValue={value}
                     onValueChanged={e => {
-                        console.log(JSON.stringify(e))
                         setValue({ ...e });
                     }}
                 />
@@ -69,8 +70,9 @@ export default function Page() {
                     multiline
                     readOnly
                 />
-                <Numericbox intOnly defaultValue={priority??0} onChange={e=>setPriority(e.currentTarget.valueAsNumber)}/>
-                <Button
+                <Textbox className={styles.controlTitle} defaultValue={title} placeholder="Title" onChange={e=>setTitle(e.currentTarget.value)}/>
+                <Numericbox className={styles.controlPriority} intOnly defaultValue={priority??0} onChange={e=>setPriority(e.currentTarget.valueAsNumber)}/>
+                <Button className={styles.controlUpload}
                     onClick={async e => {
                         const btn = e.currentTarget;
                         btn.disabled = true;
@@ -88,6 +90,7 @@ export default function Page() {
                                 body: JSON.stringify({
                                     priority: priority,
                                     layout: value,
+                                    title: title,
                                 }),
                             });
 
@@ -101,6 +104,7 @@ export default function Page() {
                                     id:id,
                                     priority: priority,
                                     layout: value,
+                                    title: title,
                                 }),
                             });
                         }

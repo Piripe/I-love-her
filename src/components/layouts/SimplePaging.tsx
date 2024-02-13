@@ -1,9 +1,9 @@
 import SimplePagingClient from "./SimplePagingClient";
 
-export default function SimplePaging(props: { children: JSX.Element[] }) {
+export default function SimplePaging(props: { pages: JSX.Element[] }) {
 
 
     return (
-        <SimplePagingClient pages={props.children}/>
+        <SimplePagingClient pages={props.pages}/>
     );
 }

@@ -169,10 +169,15 @@
   --accent-secondary: rgb(164, 123, 211);
   --accent-tertiary: rgb(150, 109, 197);
   --accent-disabled: rgb(60, 45, 77);
+  
+  --danger: rgb(184, 37, 37);
+  --danger-secondary: rgb(206, 32, 32);
+  --danger-tertiary: rgb(218, 24, 24);
 
   --pink-accent: rgb(245, 188, 165);
   --bordeaux-accent: rgb(95, 15, 9);
   --bordeaux-accent-secondary: rgb(121, 17, 10);
+  --bordeaux-accent-tertiary: rgb(138, 18, 9);
   --bordeaux-accent-text: rgb(170, 28, 18);
 }
 
@@ -228,6 +233,15 @@ body {
     height:1em;
     color: transparent;
     border-style:none;
+  }
+  img[alt~="small"] {
+    height:5em;
+  }
+  img[alt~="normal"] {
+    height:10em;
+  }
+  img[alt~="large"] {
+    height:20em;
   }
   img[alt^=":"][alt$=":"] {
     height:1.5em;

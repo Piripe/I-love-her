@@ -37,4 +37,19 @@
             background-color: var(--accent-disabled);
         }
     }
+    &.danger {
+        color: var(--text-primary);
+        background-color: var(--danger);
+
+        &:hover {
+            background-color: var(--danger-secondary);
+        }
+        &:active {
+            background-color: var(--danger-tertiary);
+        }
+        &:disabled {
+            color: var(--text-disabled);
+            background-color: var(--button-background-disabled);
+        }
+    }
 }

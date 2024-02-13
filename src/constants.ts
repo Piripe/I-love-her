@@ -204,11 +204,6 @@ export const layoutEditorParams: {
                 label: "Pages",
                 component: EditorParamComponent.Layouts,
             },
-            {
-                name: "background",
-                label: "Background",
-                component: EditorParamComponent.Background,
-            },
         ],
     },
 ];

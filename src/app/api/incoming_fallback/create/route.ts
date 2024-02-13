@@ -6,9 +6,9 @@ export async function POST(req: Request) {
     if ((await getUser(req.headers.get("authorization") ?? "")) == null)
         return Response.json({}, { status: 401 });
 
-    const data = (await req.json()) as { priority: number; layout: LayoutDefinition };
+    const data = (await req.json()) as { priority: number; layout: LayoutDefinition; title:string };
 
-    const returnID = await insertFallback(data.priority, data.layout);
+    const returnID = await insertFallback(data.priority, data.layout, data.title);
 
     return Response.json({ id: returnID }, { status: returnID == null ? 500 : 200 });
 }

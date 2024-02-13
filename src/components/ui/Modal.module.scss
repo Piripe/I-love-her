@@ -42,10 +42,10 @@
     justify-content: space-between;
     font-size: 24px;
     margin-bottom: 1em;
+    user-select: none;
 
     >a {
         color: var(--text-color);
         text-decoration: none;
-        user-select: none;
     }
 }
