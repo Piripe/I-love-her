@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "lodash.isequal": "^4.5.0",
-    "mariadb": "^3.3.1",
+    "mariadb": "^3.3.4",
     "next": "^15.5.18",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
