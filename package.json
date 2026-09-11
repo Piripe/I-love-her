@@ -12,7 +12,7 @@
   "dependencies": {
     "lodash.isequal": "^4.5.0",
     "mariadb": "^3.3.4",
-    "next": "^15.5.18",
+    "next": "^15.5.25",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
     "react-dom": "^18",
@@ -20,7 +20,7 @@
     "remark-breaks": "^4.0.0",
     "remark-emoji": "^4.0.1",
     "sass": "^1.69.5",
-    "sharp": "^0.35.0",
+    "sharp": "^0.35.4",
     "twemoji": "^14.0.1"
   },
   "devDependencies": {
